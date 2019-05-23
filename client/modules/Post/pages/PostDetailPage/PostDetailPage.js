@@ -38,9 +38,6 @@ export class PostDetailPage extends Component {
     this.props.editPostRequest(this.state);
   };
   
-  
-
-
   renderPostForm = () => {
     return (
       <div className={styles['form-content']}>
@@ -63,9 +60,6 @@ export class PostDetailPage extends Component {
     );
   };
   
-  
-
-
   render() {
     return (
       <div>
@@ -81,23 +75,6 @@ export class PostDetailPage extends Component {
   }
   
 }
-
-
-
-
-
-// export function PostDetailPage(props) {
-//   return (
-//     <div>
-//       <Helmet title={props.post.title} />
-//       <div className={`${styles['single-post']} ${styles['post-detail']}`}>
-//         <h3 className={styles['post-title']}>{props.post.title}</h3>
-//         <p className={styles['author-name']}><FormattedMessage id="by" /> {props.post.name}</p>
-//         <p className={styles['post-desc']}>{props.post.content}</p>
-//       </div>
-//     </div>
-//   );
-// }
 
 // Actions required to provide data for this component to render in server side.
 PostDetailPage.need = [params => {
@@ -119,7 +96,6 @@ function mapDispatchToProps(dispatch, props) {
   };
 }
 
-
 PostDetailPage.propTypes = {
   post: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -139,7 +115,5 @@ PostDetailPage.propTypes = {
   toggleEditPost: PropTypes.func.isRequired,
   editPostRequest: PropTypes.func.isRequired,
 };
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(PostDetailPage));
